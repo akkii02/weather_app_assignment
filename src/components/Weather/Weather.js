@@ -32,7 +32,7 @@ const Weather = ({ city }) => {
 
       try {
         const response = await axios.get(url);
-        console.log(response.data,"Data")
+        console.log(response.data, "Data");
         setWeatherData(response.data);
       } catch (error) {
         console.error("Error fetching the weather data", error);
@@ -43,7 +43,7 @@ const Weather = ({ city }) => {
   }, [city]);
 
   if (!weatherData) {
-    return <div style={{"textAlign":"center"}}>Loading...</div>;
+    return <div style={{ textAlign: "center" }}>Loading...</div>;
   }
 
   const getBackgroundImage = (weather) => {
@@ -59,6 +59,7 @@ const Weather = ({ city }) => {
         return clear;
     }
   };
+  
   const getWeatherIcon = (weather) => {
     const weatherMain = weather[0].main.toLowerCase();
     switch (weatherMain) {
@@ -75,11 +76,15 @@ const Weather = ({ city }) => {
     }
   };
 
-  const { main, weather, wind, sys, coord,name } = weatherData;
+  const { main, weather, wind, sys, coord, name } = weatherData;
   const date = new Date();
   const backgroundImage = getBackgroundImage(weather);
   const weatherIcon = getWeatherIcon(weather);
-  console.log(backgroundImage, "bI");
+
+  const formatCoordinate = (coord) => {
+    return coord.toFixed(2);
+  };
+
   return (
     <div
       className={classes.container}
@@ -97,7 +102,9 @@ const Weather = ({ city }) => {
             </div>
           </div>
           <div className={classes.secondBox}>
-            <div style={{"fontSize":"20px","margin":"0 0 20px 0"}}><FontAwesomeIcon icon={faMapMarkerAlt} />{name}</div>
+            <div style={{ fontSize: "20px", margin: "0 0 20px 0" }}>
+              <FontAwesomeIcon icon={faMapMarkerAlt} /> {name}
+            </div>
             <strong>{main.temp} °C</strong>
           </div>
         </div>
@@ -175,7 +182,7 @@ const Weather = ({ city }) => {
                 <img src={longitude} alt="Longitude" />
               </div>
               <div className={classes.detailSecondBox}>
-                <span className={classes.big}>{coord.lon}</span>
+                <span className={classes.big}>{formatCoordinate(coord.lon)}</span>
                 <span className={classes.colorYellow}>Longitude</span>
               </div>
             </li>
@@ -184,7 +191,7 @@ const Weather = ({ city }) => {
                 <img src={latitude} alt="Latitude" />
               </div>
               <div className={classes.detailSecondBox}>
-                <span className={classes.big}>{coord.lat}</span>
+                <span className={classes.big}>{formatCoordinate(coord.lat)}</span>
                 <span className={classes.colorYellow}>Latitude</span>
               </div>
             </li>

@@ -50,3 +50,9 @@ button:focus {
 .separate {
   width: 0.5rem;
 }
+
+@media (max-width: 450px) {
+    .main{
+        width: 300px;
+    }
+}

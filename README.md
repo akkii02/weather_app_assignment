@@ -36,7 +36,15 @@ This is a weather application that allows users to search for weather informatio
 - Geolocation API may not work on all browsers or if the user denies permission.
 - Limited set of weather conditions for background images and icons, may not cover all possible weather scenarios.
 ## Some ScreenShoot 
+ ![1](https://github.com/akkii02/weather_app_assignment/assets/99502029/05d99a06-4bfd-4cf7-b2f0-77001fd17cbe)
 
+ ![2](https://github.com/akkii02/weather_app_assignment/assets/99502029/b8130ba9-4fb5-4d77-8348-be3ac1c16651)
+
+ ![3](https://github.com/akkii02/weather_app_assignment/assets/99502029/f4abc3be-dea7-4173-a6c5-5d8db18134a9)
+
+ ![4](https://github.com/akkii02/weather_app_assignment/assets/99502029/a357db9c-33f5-48c1-81b4-83fc878d1551)
+
+ ![5](https://github.com/akkii02/weather_app_assignment/assets/99502029/6149a668-3ea6-4879-952e-5cbbd62da5e5)
 
 ## Instructions to Run the Application Locally
 
